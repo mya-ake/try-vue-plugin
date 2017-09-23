@@ -16,9 +16,6 @@
 </template>
 <script>
 export default {
-  created() {
-    this.$enviroment.browser = 'test'
-  },
   computed: {
     browser() {
       return this.$enviroment.browser
