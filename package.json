@@ -1,0 +1,37 @@
+{
+  "name": "try-vue-plugin",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/mya-ake/try-vue-plugin.git",
+  "license": "MIT",
+  "scripts": {
+    "serve": "npm-run-all --serial delete build:development serve:start",
+    "serve:start": "npm-run-all --parallel serve:watch serve:browser",
+    "serve:watch": "webpack --watch --progress --config webpack.config.js",
+    "serve:browser": "browser-sync start --config bs-config.js",
+    "build": "npm-run-all --serial delete build:production",
+    "build:production": "webpack -p --progress --devtool hidden-source-map --config webpack.config.js",
+    "build:development": "webpack --progress --config webpack.config.js",
+    "delete": "rimraf ./dist"
+  },
+  "dependencies": {
+    "babel-runtime": "^6.26.0",
+    "vue": "^2.4.4"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
+    "css-loader": "^0.28.7",
+    "html-webpack-plugin": "^2.30.1",
+    "npm-run-all": "^4.1.1",
+    "rimraf": "^2.6.2",
+    "script-ext-html-webpack-plugin": "^1.8.5",
+    "vue-loader": "^13.0.5",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.4.4",
+    "webpack": "^3.6.0"
+  }
+}
