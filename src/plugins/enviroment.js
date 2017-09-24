@@ -27,6 +27,7 @@ const install = (Vue, options) => {
   Object.defineProperty(Vue.prototype, '$enviroment', {
     get() {
       return {
+        name: 'Enviroment',
         browser: getBrowser(),
       }
     }
